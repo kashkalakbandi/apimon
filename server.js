@@ -4,6 +4,7 @@ const hbs = require("hbs");
 const request = require("request");
 const axios = require('axios');
 var bodyParser = require("body-parser");
+const { timeEnd } = require("console");
 
 var app = express();
 const port = process.env.PORT || 3000;
@@ -42,7 +43,7 @@ setTimeout(()=>{
 
 app.get('/users-mock/:timeInMs',(req,res)=>{
     setTimeout(()=>{
-        axios.get('    https://jsonplaceholder.typicode.com/users')
+        axios.get('https://jsonplaceholder.typicode.com/users')
         .then(response => {
           //console.log(response);
           res.send(response.data);
@@ -52,6 +53,23 @@ app.get('/users-mock/:timeInMs',(req,res)=>{
         });
       },req.params['timeInMs']);
       })
+
+
+// get random photos
+app.get('/random-photos/:timeInSecs',(req,res)=>{
+setTimeout(
+()=>{
+    axios.get('https://jsonplaceholder.typicode.com/photos')
+    .then((response)=>{
+        res.send(response.data);
+    }).catch((error)=>{
+        res.send(error);
+    })
+},req.params['timeInMs']);
+});
+
+
+
 
 // Mock bitcoin data for fetching
 app.get("/mock-btc", (req, res) => {
