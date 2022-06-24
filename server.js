@@ -26,6 +26,7 @@ app.set("views", viewPath);
 
 // hits a mock endpoint and returns the data in sepecified seconds
 //  timeInMs -> the delay you want to set in ms eg : 2000 -> 2 secs
+// if its null then it default takes 0
 app.get('/comments-mock/:timeInMs',(req,res)=>{
 
 setTimeout(()=>{
@@ -37,10 +38,14 @@ setTimeout(()=>{
   .catch(error => {
     console.error(error);
   });
-},req.params['timeInMs']);
+},req.params['timeInMs'] ? req.params['timeInMs'] : 0);
 })
 
 
+
+// hits a mock endpoint and returns the data in sepecified seconds
+//  timeInMs -> the delay you want to set in ms eg : 2000 -> 2 secs
+// if its null then it default takes 0
 app.get('/users-mock/:timeInMs',(req,res)=>{
     setTimeout(()=>{
         axios.get('https://jsonplaceholder.typicode.com/users')
@@ -51,10 +56,14 @@ app.get('/users-mock/:timeInMs',(req,res)=>{
         .catch(error => {
           console.error(error);
         });
-      },req.params['timeInMs']);
+      },req.params['timeInMs'] ? req.params['timeInMs'] : 0);
       })
 
 
+      
+// hits a mock endpoint and returns the data in sepecified seconds
+//  timeInMs -> the delay you want to set in ms eg : 2000 -> 2 secs
+// if its null then it default takes 0
 // get random photos
 app.get('/random-photos/:timeInSecs',(req,res)=>{
 setTimeout(
@@ -65,7 +74,7 @@ setTimeout(
     }).catch((error)=>{
         res.send(error);
     })
-},req.params['timeInMs']);
+},req.params['timeInMs'] ? req.params['timeInMs'] : 0);
 });
 
 
