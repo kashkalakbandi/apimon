@@ -40,6 +40,18 @@ setTimeout(()=>{
 })
 
 
+app.get('/users-mock/:timeInMs',(req,res)=>{
+    setTimeout(()=>{
+        axios.get('    https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+          //console.log(response);
+          res.send(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      },req.params['timeInMs']);
+      })
 
 // Mock bitcoin data for fetching
 app.get("/mock-btc", (req, res) => {
