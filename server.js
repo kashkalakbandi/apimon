@@ -5,9 +5,13 @@ const request = require("request");
 const axios = require('axios');
 var bodyParser = require("body-parser");
 const { timeEnd } = require("console");
+const cors = require("cors");
 
 var app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
+
 
 // middleware
 // __dirname - stores path to directory
