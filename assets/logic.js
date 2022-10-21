@@ -1,5 +1,4 @@
 function handleSubmit(e) {
-e.preventDefault();
 
     var sfSessionId = document.getElementById("sessionInput").value;
 
@@ -31,5 +30,6 @@ e.preventDefault();
     // xhttp.setRequestHeader("Authorization", "Bearer "+sfSessionId);
     // xhttp.send();
 
+    e.preventDefault();
 
 }
