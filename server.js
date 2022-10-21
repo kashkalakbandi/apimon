@@ -162,6 +162,13 @@ app.get("/mock-btc", (req, res) => {
   });
 });
 
+
+app.get("/corstest", (req, res) => {
+
+  res.render("corsmaster");
+  
+});
+
 app.set("view engine", "hbs");
 
 app.listen(port);
