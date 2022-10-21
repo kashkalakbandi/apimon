@@ -22,9 +22,23 @@
     
 </body>
 
-<script src="logic.js" type="javascript"></script>
 
+<script type="application/javascript">
 
+    var sfSessionId = document.getElementById("sessionInput").value;
+    console.log(sfSessionId);
+        fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D',
+       {method: 'POST',
+       headers: {
+        'Content-Type': 'application/json',
+        'Authorization':'Bearer '+sfSessionId
+      }
+        }
+        )
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+
+</script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
