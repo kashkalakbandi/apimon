@@ -20,7 +20,7 @@
     
     console.log(sfSessionId);
         fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D',
-       {method: 'POST',
+       {method: 'GET',
        headers: {
         'Authorization':'Bearer '+sfSessionId
       }
