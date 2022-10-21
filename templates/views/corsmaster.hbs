@@ -19,17 +19,19 @@
         var sfSessionId = document.querySelector("#sessionInput").value;
     
     console.log(sfSessionId);
- /*       fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/sobjects/Account/0015h00000fADJk',
-       {method: 'GET',
-       headers: {
+        fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/sobjects/Account/0015h00000fADJk',
+       {
+        method: 'GET',
+        headers: {
         'Content-Type': 'application/json',
         'Authorization':'Bearer '+sfSessionId
       }
         }
         )
-        .then((response) => response.json())
-        .then((data)=> console.log(data));
-*/
+        .then((response) => {return response.json()})
+        .then((data)=> {console.log(data)});
+
+/*
 var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     console.log("=========== XMLHttpRequest readyState:", this.readyState, ", status:", this.status);
@@ -44,7 +46,7 @@ var xhttp = new XMLHttpRequest();
     };
     xhttp.open("GET", "https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/sobjects/Account/0015h00000fADJk", true);
     xhttp.setRequestHeader("Authorization", "Bearer "+sfSessionId);
-    xhttp.send();
+    xhttp.send();*/
 
 
 }
