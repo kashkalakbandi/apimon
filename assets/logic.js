@@ -1,6 +1,6 @@
 function handleSubmit(e) {
+e.preventDefault();
 
-    alert(e);
     var sfSessionId = document.getElementById("sessionInput").value;
 
     var xhttp = new XMLHttpRequest();
@@ -18,4 +18,6 @@ function handleSubmit(e) {
     xhttp.open("GET", "https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D", true);
     xhttp.setRequestHeader("Authorization", "Bearer "+sfSessionId);
     xhttp.send();
+
+
 }
