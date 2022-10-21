@@ -14,7 +14,9 @@
     
 <script type="application/javascript">
 
-    var sfSessionId = document.querySelector("#sessionInput").value;
+    function handleClick()
+    {
+        var sfSessionId = document.querySelector("#sessionInput").value;
     
     console.log(sfSessionId);
         /*fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D',
@@ -27,6 +29,7 @@
         .then((response) => response.json())
         .then((data) => console.log(data));
 */
+    }
 </script>
     <form>
   <div class="form-group">
@@ -34,7 +37,7 @@
     <input type="text" class="form-control" id="sessionInput" aria-describedby="sessionInput" placeholder="Enter Session Id">
     <small id="sessionInput" class="form-text text-muted">Generate the session Id/ access token  from Postman</small>
   </div>
-  <button  class="btn btn-primary" onclick="handleSubmit();">Submit</button>
+  <button  class="btn btn-primary" onclick="handleClick();">Submit</button>
 </form>
     
 </body>
