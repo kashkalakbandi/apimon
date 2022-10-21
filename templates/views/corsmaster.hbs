@@ -26,8 +26,9 @@
 <script type="application/javascript">
 
     var sfSessionId = document.getElementById("sessionInput").value;
+    
     console.log(sfSessionId);
-        fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D',
+        /*fetch('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D',
        {method: 'POST',
        headers: {
         'Authorization':'Bearer '+sfSessionId
@@ -36,7 +37,7 @@
         )
         .then((response) => response.json())
         .then((data) => console.log(data));
-
+*/
 </script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
