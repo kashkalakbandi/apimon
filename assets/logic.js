@@ -1,3 +1,4 @@
+
 function handleClick()
 {
     var sfSessionId = document.querySelector("#sessionInput").value;
@@ -25,6 +26,7 @@ const response = await fetch(url, {
     },
     body: JSON.stringify(data) // body data type must match "Content-Type" header
 });
+console.log(response);
 return response; // parses JSON response into native JavaScript objects
 }
 
