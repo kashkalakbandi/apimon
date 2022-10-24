@@ -183,9 +183,8 @@ axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjec
 })
 .then(function (response) {
   // handle success
-  console.log("@@@ "+JSON.stringify(response.data));
+  console.log(response);
   //res.send(JSON.stringify(response.data));
-  res.send({message:"ok"});
 
 
 })
