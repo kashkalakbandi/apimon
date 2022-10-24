@@ -194,7 +194,7 @@ axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjec
 })
 .finally(function () {
   // always executed
-res.send(response);
+  res.send("OK")
 });
 });
 
