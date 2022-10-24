@@ -26,7 +26,7 @@ const response = await fetch(url, {
     },
     body: JSON.stringify(data) // body data type must match "Content-Type" header
 });
-console.log(response);
-return response; // parses JSON response into native JavaScript objects
+console.log('lol'+response);
+return response; // parses JSON re  sponse into native JavaScript objects
 }
 
