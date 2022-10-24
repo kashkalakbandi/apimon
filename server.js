@@ -166,22 +166,35 @@ app.get("/mock-btc", (req, res) => {
 app.get("/corstest", (req, res) => {
 
   res.render("corsmaster");
-
-// Make a request for a user with a given ID
-axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/0015h00000fADJk')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
   
 });
+
+
+app.post("/fetcher",(req,res)=>{
+  
+console.log(req.body.sessionId);
+
+// Make a request for a user with a given ID
+axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/0015h00000fADJk',
+{
+  headers: {
+    'Authorization' : 'Bearer '+req.body.sessionId
+  }
+})
+.then(function (response) {
+  // handle success
+  console.log(response);
+  res.send(response.data)
+})
+.catch(function (error) {
+  // handle error
+  console.log(error);
+})
+.finally(function () {
+  // always executed
+});
+});
+
 
 app.set("view engine", "hbs");
 
