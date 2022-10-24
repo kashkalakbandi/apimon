@@ -6,7 +6,7 @@ function handleClick()
     
     
 
-    postData('/fetcher', { sessionId: sfSessionId })
+    postData('https://api-mon.herokuapp.com/fetcher', { sessionId: sfSessionId })
     .then((data) => {
         console.log(data); // JSON data parsed by `data.json()` call
     });
