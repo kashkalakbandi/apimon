@@ -8,6 +8,7 @@ function handleClick()
 
     postData('https://api-mon.herokuapp.com/fetcher', { sessionId: sfSessionId })
     .then((data) => {
+        console.log('This is response from axios - ');
         console.log(data); // JSON data parsed by `data.json()` call
     });
 
