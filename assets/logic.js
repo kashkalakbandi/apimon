@@ -15,7 +15,7 @@ function handleClick()
         .then((response) => 
         {
             console.log(response)
-            return response.json()
+            return response.json();
         })
         .then((data)=> 
         {

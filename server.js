@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const request = require("request");
-const axios = require('axios');
+const axios = require('axios').default;
 var bodyParser = require("body-parser");
 const { timeEnd } = require("console");
 const cors = require("cors");
@@ -166,6 +166,20 @@ app.get("/mock-btc", (req, res) => {
 app.get("/corstest", (req, res) => {
 
   res.render("corsmaster");
+
+// Make a request for a user with a given ID
+axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/0015h00000fADJk')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
   
 });
 
