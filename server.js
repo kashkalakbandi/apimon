@@ -172,8 +172,6 @@ app.get("/corstest", (req, res) => {
 
 app.post("/fetcher",(req,res)=>{
   
-console.log("@@@ "+req.body.sessionId);
-
 // Make a request for a user with a given ID
 axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/0015h00000fADJk',
 {
@@ -184,7 +182,7 @@ axios.get('https://sfdxworks-dev-ed.my.salesforce.com/services/data/v53.0/sobjec
 .then(function (response) {
   // handle success
   console.log(response);
-  res.send(response.data)
+  res.send("@@@ "+response.data)
 })
 .catch(function (error) {
   // handle error
