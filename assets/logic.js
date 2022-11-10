@@ -15,6 +15,22 @@ function handleClick()
 
 }
 
+function customerhandleClick()
+{
+    var sfSessionId = document.querySelector("#sessionInput").value;
+
+    console.log(sfSessionId);
+    
+    
+
+    postData('https://api-mon.herokuapp.com/customerfetcher', { sessionId: sfSessionId })
+    .then((data) => {
+        console.log('This is response from axios - ');
+        console.log(data); // JSON data parsed by `data.json()` call
+    });
+
+}
+
 // Example POST method implementation:
 async function postData(url = '', data = {}) {
 // Default options are marked with *

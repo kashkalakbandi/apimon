@@ -170,6 +170,36 @@ app.get("/corstest", (req, res) => {
 });
 
 
+
+app.post("/customerfetcher",(req,res)=>{
+  
+
+  // Make a request for a user with a given ID
+  axios.get('https://devboxcom8-dev-ed.my.salesforce.com/services/data/v52.0/search/?q=FIND%20%7Bandy%7D',
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : 'Bearer '+req.body.sessionId
+    }
+  })
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    //res.send(JSON.stringify(response.data));
+    
+  
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+    res.send(res.status+'--'+res.statusCode+'--'+res.statusMessage)
+  })
+  .finally(function () {
+    // always executed
+  });
+  });
+
+
 app.post("/fetcher",(req,res)=>{
   
 
